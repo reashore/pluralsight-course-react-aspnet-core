@@ -1,9 +1,9 @@
-const path = require('path');
-const APP_DIR = path.resolve(__dirname, 'ClientApp');
-const PUBLIC_DIR = path.resolve(__dirname, 'public');
+import { resolve } from 'path';
+const APP_DIR = resolve(__dirname, 'ClientApp');
+const PUBLIC_DIR = resolve(__dirname, 'public');
 
-const merge = require('webpack-merge');
-const baseConfig = require('./webpack.base.js');
+import merge from 'webpack-merge';
+import baseConfig from './webpack.base.js';
 
 const config = {
     entry: APP_DIR + '/Client.js',
@@ -25,4 +25,4 @@ const config = {
 
 //module.exports = config;
 
-module.exports = merge(baseConfig, config);
+export default merge(baseConfig, config);
